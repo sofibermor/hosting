@@ -15,6 +15,7 @@ body {
   color: #2b2b2b;
 }
 
+/* HEADER */
 header {
   text-align: center;
   padding: 50px 20px 20px;
@@ -23,7 +24,6 @@ header {
 header h1 {
   font-size: 2.6rem;
   font-weight: 500;
-  letter-spacing: 1px;
   color: #E03124;
 }
 
@@ -38,7 +38,6 @@ header h1 {
   background: none;
   border: none;
   font-size: 0.9rem;
-  letter-spacing: 1px;
   cursor: pointer;
   color: #777;
 }
@@ -47,6 +46,7 @@ header h1 {
   color: #E03124;
 }
 
+/* HERO */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -54,7 +54,6 @@ header h1 {
 
 .hero h2 {
   font-size: 2.4rem;
-  font-weight: 500;
 }
 
 .hero p {
@@ -70,48 +69,59 @@ header h1 {
   border: none;
   background: #E03124;
   color: white;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  cursor: pointer;
 }
 
+/* SECCIONES */
 section {
   max-width: 1000px;
   margin: auto;
   padding: 60px 20px;
   display: none;
+  animation: fade 0.5s ease;
 }
 
-.activa { display:block; }
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
 
+/* CATALOGO */
 .catalogo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
 }
 
 .item {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
   text-align: center;
+  transition: 0.3s;
 }
 
-.item img {
-  width: 100%;
-  border-radius: 25px;
+.item:hover {
+  transform: translateY(-8px);
 }
 
 .item h3 {
-  margin-top: 15px;
-  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.item p {
+  color: #999;
+  font-size: 0.85rem;
 }
 
 .item button {
   margin-top: 10px;
-  padding: 10px 22px;
+  padding: 10px 20px;
   border-radius: 30px;
   border: 1px solid #E03124;
   background: transparent;
   color: #E03124;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .item button:hover {
@@ -119,6 +129,7 @@ section {
   color: white;
 }
 
+/* FORM */
 form {
   max-width: 400px;
   display: flex;
@@ -132,14 +143,33 @@ input, textarea, select {
   border: 1px solid #eee;
 }
 
+.error {
+  border: 2px solid red;
+}
+
 button.enviar {
   background: #E03124;
   color: white;
   border: none;
   padding: 14px;
   border-radius: 30px;
+  cursor: pointer;
 }
 
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
@@ -147,6 +177,7 @@ footer {
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -160,17 +191,14 @@ footer {
 </header>
 
 <div class="hero">
-<h2>Regalos pensados con amor</h2>
-<p>Diseñados para sorprender, emocionar y crear momentos únicos.</p>
+<h2>Regalos que emocionan de verdad</h2>
+<p>No vendemos productos, creamos momentos únicos que no se olvidan.</p>
 <button onclick="cambiar('catalogo')">VER CATÁLOGO</button>
 </div>
 
-<section id="descripcion" class="activa">
+<section id="descripcion">
 <h2>Nosotros</h2>
-<p>Bienvenidos a Detalles with Love,
-un espacio creado para transformar pequeños momentos en recuerdos inolvidables.
-Cada detalle está pensado con amor, dedicación y un toque único, porque creemos que regalar también es una forma de decir "te quiero".
-Gracias por ser parte</p>
+<p>Transformamos momentos en recuerdos únicos. Cada detalle está hecho con amor para sorprender de verdad.</p>
 </section>
 
 <section id="catalogo">
@@ -178,38 +206,38 @@ Gracias por ser parte</p>
 <div class="catalogo">
 
 <div class="item">
-<img src="https://via.placeholder.com/400">
 <h3>Portarretrato</h3>
+<p>Ideal para regalos especiales 🎁</p>
 <button onclick="selectProducto('Portarretrato personalizado')">ELEGIR</button>
 </div>
 
 <div class="item">
-<img src="https://via.placeholder.com/400">
 <h3>Cuadro pintado</h3>
+<p>Ideal para regalar arte único 🎨</p>
 <button onclick="selectProducto('Cuadros pintados a mano')">ELEGIR</button>
 </div>
 
 <div class="item">
-<img src="https://via.placeholder.com/400">
 <h3>Cielo especial</h3>
+<p>Capturá un momento único ✨</p>
 <button onclick="selectProducto('Cuadro cielo especial')">ELEGIR</button>
 </div>
 
 <div class="item">
-<img src="https://via.placeholder.com/400">
 <h3>Box momentos</h3>
+<p>Regalo completo y emocional 💝</p>
 <button onclick="selectProducto('Box momentos únicos')">ELEGIR</button>
 </div>
 
 <div class="item">
-<img src="https://via.placeholder.com/400">
 <h3>Hotwheels</h3>
+<p>Perfecto para fans 🚗</p>
 <button onclick="selectProducto('Box Hotwheels')">ELEGIR</button>
 </div>
 
 <div class="item">
-<img src="https://via.placeholder.com/400">
 <h3>Polaroids</h3>
+<p>Recuerdos físicos inolvidables 📸</p>
 <button onclick="selectProducto('Polaroids personalizadas')">ELEGIR</button>
 </div>
 
@@ -220,15 +248,15 @@ Gracias por ser parte</p>
 <h2>Contacto</h2>
 <p>WhatsApp: 099 448 219</p>
 <p>Instagram: @detalleswithlove.uy</p>
-<p>Ubicación: Melo Cerro Largo</p>
+<p>Ubicación: Melo, Cerro Largo</p>
 </section>
 
 <section id="pedido">
 <h2>Pedido</h2>
 <form onsubmit="enviar(event)">
-<input id="nombre" placeholder="Nombre" required>
-<input id="direccion" placeholder="Dirección" required>
-<select id="producto" required>
+<input id="nombre" placeholder="Nombre">
+<input id="direccion" placeholder="Dirección">
+<select id="producto">
 <option value="">Producto</option>
 <option>Portarretrato personalizado</option>
 <option>Cuadros pintados a mano</option>
@@ -246,49 +274,52 @@ Gracias por ser parte</p>
 © 2026 detalleswithlove.uy
 </footer>
 
+<a href="https://wa.me/59899448219" target="_blank" class="whatsapp">💬</a>
+
 <script>
 
-// Esperar a que cargue todo
-window.addEventListener('DOMContentLoaded', () => {
+function cambiar(id){
+  document.querySelectorAll('section').forEach(sec => sec.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top: document.getElementById(id).offsetTop, behavior:'smooth'});
+}
 
-  window.cambiar = function(id){
-    document.querySelectorAll('section').forEach(sec => {
-      sec.style.display = 'none';
-    });
+function selectProducto(p){
+  document.getElementById('producto').value = p;
+  cambiar('pedido');
+}
 
-    const destino = document.getElementById(id);
-    if(destino){
-      destino.style.display = 'block';
+function enviar(e){
+  e.preventDefault();
+
+  let nombre = document.getElementById('nombre');
+  let direccion = document.getElementById('direccion');
+  let producto = document.getElementById('producto');
+
+  let error = false;
+
+  [nombre, direccion, producto].forEach(campo => {
+    if(!campo.value){
+      campo.classList.add('error');
+      error = true;
+    } else {
+      campo.classList.remove('error');
     }
+  });
 
-    if(destino){ destino.scrollIntoView({behavior:'smooth'}); }
+  if(error){
+    alert("Completá todos los campos obligatorios");
+    return;
   }
 
-  window.selectProducto = function(p){
-    const select = document.getElementById('producto');
-    if(select){
-      select.value = p;
-    }
-    cambiar('pedido');
-  }
+  let mensaje = document.getElementById('mensaje').value;
 
-  window.enviar = function(e){
-    e.preventDefault();
+  let texto = `Pedido:%0ANombre: ${nombre.value}%0ADireccion: ${direccion.value}%0AProducto: ${producto.value}%0ADetalles: ${mensaje}`;
 
-    const nombre = document.getElementById('nombre').value;
-    const direccion = document.getElementById('direccion').value;
-    const producto = document.getElementById('producto').value;
-    const mensaje = document.getElementById('mensaje').value;
+  window.open(`https://wa.me/59899448219?text=${texto}`);
+}
 
-    const texto = `Pedido:%0ANombre: ${nombre}%0ADireccion: ${direccion}%0AProducto: ${producto}%0ADetalles: ${mensaje}`;
-
-    window.open(`https://wa.me/59899448219?text=${texto}`);
-  }
-
-  // Mostrar primera sección
-  cambiar('descripcion');
-
-});
+cambiar('descripcion');
 
 </script>
 
