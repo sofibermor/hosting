@@ -1,1 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>detalleswithlove.uy</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fcdde3;
+  color: #2b2b2b;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #E03124;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #777;
+}
+
+.menu button:hover {
+  color: #E03124;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.hero p {
+  color: #777;
+  max-width: 500px;
+  margin: 15px auto;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #E03124;
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+  display: none;
+}
+
+.activa { display:block; }
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 25px;
+}
+
+.item h3 {
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.item button {
+  margin-top: 10px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid #E03124;
+  background: transparent;
+  color: #E03124;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.item button:hover {
+  background: #E03124;
+  color: white;
+}
+
+form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, select {
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #eee;
+}
+
+button.enviar {
+  background: #E03124;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #aaa;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>detalleswithlove.uy</h1>
+<div class="menu">
+<button onclick="cambiar('descripcion')">NOSOTROS</button>
+<button onclick="cambiar('catalogo')">CATÁLOGO</button>
+<button onclick="cambiar('contacto')">CONTACTO</button>
+<button onclick="cambiar('pedido')">PEDIDO</button>
+</div>
+</header>
+
+<div class="hero">
+<h2>Regalos pensados con amor</h2>
+<p>Diseñados para sorprender, emocionar y crear momentos únicos.</p>
+<button onclick="cambiar('catalogo')">VER CATÁLOGO</button>
+</div>
+
+<section id="descripcion" class="activa">
+<h2>Nosotros</h2>
+<p>Bienvenidos a Detalles with Love,
+un espacio creado para transformar pequeños momentos en recuerdos inolvidables.
+Cada detalle está pensado con amor, dedicación y un toque único, porque creemos que regalar también es una forma de decir "te quiero".
+Gracias por ser parte</p>
+</section>
+
+<section id="catalogo">
+<h2>Catálogo</h2>
+<div class="catalogo">
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+<h3>Portarretrato</h3>
+<button onclick="selectProducto('Portarretrato personalizado')">ELEGIR</button>
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+<h3>Cuadro pintado</h3>
+<button onclick="selectProducto('Cuadros pintados a mano')">ELEGIR</button>
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+<h3>Cielo especial</h3>
+<button onclick="selectProducto('Cuadro cielo especial')">ELEGIR</button>
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+<h3>Box momentos</h3>
+<button onclick="selectProducto('Box momentos únicos')">ELEGIR</button>
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+<h3>Hotwheels</h3>
+<button onclick="selectProducto('Box Hotwheels')">ELEGIR</button>
+</div>
+
+<div class="item">
+<img src="https://via.placeholder.com/400">
+<h3>Polaroids</h3>
+<button onclick="selectProducto('Polaroids personalizadas')">ELEGIR</button>
+</div>
+
+</div>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p>WhatsApp: 099 448 219</p>
+<p>Instagram: @detalleswithlove.uy</p>
+<p>Ubicación: Melo Cerro Largo</p>
+</section>
+
+<section id="pedido">
+<h2>Pedido</h2>
+<form onsubmit="enviar(event)">
+<input id="nombre" placeholder="Nombre" required>
+<input id="direccion" placeholder="Dirección" required>
+<select id="producto" required>
+<option value="">Producto</option>
+<option>Portarretrato personalizado</option>
+<option>Cuadros pintados a mano</option>
+<option>Cuadro cielo especial</option>
+<option>Box momentos únicos</option>
+<option>Box Hotwheels</option>
+<option>Polaroids personalizadas</option>
+</select>
+<textarea id="mensaje" placeholder="Detalles"></textarea>
+<button class="enviar">ENVIAR</button>
+</form>
+</section>
+
+<footer>
+© 2026 detalleswithlove.uy
+</footer>
+
+<script>
+
+// Esperar a que cargue todo
+window.addEventListener('DOMContentLoaded', () => {
+
+  window.cambiar = function(id){
+    document.querySelectorAll('section').forEach(sec => {
+      sec.style.display = 'none';
+    });
+
+    const destino = document.getElementById(id);
+    if(destino){
+      destino.style.display = 'block';
+    }
+
+    if(destino){ destino.scrollIntoView({behavior:'smooth'}); }
+  }
+
+  window.selectProducto = function(p){
+    const select = document.getElementById('producto');
+    if(select){
+      select.value = p;
+    }
+    cambiar('pedido');
+  }
+
+  window.enviar = function(e){
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const direccion = document.getElementById('direccion').value;
+    const producto = document.getElementById('producto').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    const texto = `Pedido:%0ANombre: ${nombre}%0ADireccion: ${direccion}%0AProducto: ${producto}%0ADetalles: ${mensaje}`;
+
+    window.open(`https://wa.me/59899448219?text=${texto}`);
+  }
+
+  // Mostrar primera sección
+  cambiar('descripcion');
+
+});
+
+</script>
+
+</body>
+</html>
